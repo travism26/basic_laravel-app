@@ -25,11 +25,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
+      <file leaf-file-name="TodoListController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/controllers/TodoListController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2895105" vertical-offset="0" max-vertical-offset="715">
-              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+            <state vertical-scroll-proportion="-0.5468531" vertical-offset="529" max-vertical-offset="2507">
+              <caret line="6" column="21" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -65,8 +65,8 @@
         <option value="$PROJECT_DIR$/app/views/todos/show.blade.php" />
         <option value="$PROJECT_DIR$/app/views/todos/index.blade.php" />
         <option value="$PROJECT_DIR$/app/views/todos/create.blade.php" />
-        <option value="$PROJECT_DIR$/app/controllers/TodoListController.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/app/controllers/TodoListController.php" />
       </list>
     </option>
   </component>
@@ -86,7 +86,7 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="239" />
+    <option name="x" value="764" />
     <option name="y" value="79" />
     <option name="width" value="773" />
     <option name="height" value="767" />
@@ -121,7 +121,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="FullScreen" value="false" />
-    <property name="options.lastSelected" value="com.intellij.webcore.resourceRoots.WebIdeProjectStructureWithSourceConfigurable" />
+    <property name="options.lastSelected" value="editing.templates" />
     <property name="options.splitter.main.proportions" value="0.23890063" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="SearchEverywhereHistoryKey" value="live tem&#9;null&#9;null&#10;refresh&#9;ACTION&#9;IncomingChanges.Refresh&#10;exa&#9;null&#9;null&#10;giti&#9;FILE&#9;file:///Users/travismartin/Homestead/Projects/laravel-basics/.gitignore&#10;live templates&#9;null&#9;null&#10;reformat code&#9;ACTION&#9;ReformatCode&#10;code styl&#9;ACTION&#9;ChangeCodeStyleScheme&#10;reformat c&#9;ACTION&#9;ReformatCode&#10;live templ&#9;ACTION&#9;SaveAsTemplate&#10;live temp&#9;null&#9;null&#10;file tem&#9;null&#9;null" />
@@ -227,7 +227,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="239" y="79" width="773" height="767" extended-state="0" />
+    <frame x="764" y="79" width="773" height="767" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -615,14 +615,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/TodoListController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38601398" vertical-offset="483" max-vertical-offset="2415">
-          <caret line="33" column="7" selection-start-line="33" selection-start-column="7" selection-end-line="33" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/todos/show.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.096503496" vertical-offset="0" max-vertical-offset="715">
@@ -651,6 +643,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.2895105" vertical-offset="0" max-vertical-offset="715">
           <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/TodoListController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.5468531" vertical-offset="529" max-vertical-offset="2507">
+          <caret line="6" column="21" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
           <folding />
         </state>
       </provider>
