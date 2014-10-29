@@ -11,17 +11,28 @@
 <body>
 
 <!-- Header and Nav -->
-
 <nav class="top-bar" data-topbar>
     <ul class="title-area">
         <li class="name">
             <h1><a href="#">Site Title</a></h1>
         </li>
+
+        {{--@include('layouts._navigation')--}}
     </ul>
+    <section class="top-bar-section">
+        <ul class="right ">
+            <li class="has-dropdown not-click">
+                <a href="#">Menu Item</a>
+            </li>
+            <li class="has-dropdown not-click">
+                <a href="#">Menu Item</a>
+            </li>
+        </ul>
+    </section>
 </nav>
 
 <!-- End Header and Nav -->
-
+        @yield('navigation')
 <div class="row">
     <div class="large-12">
         @yield('content')

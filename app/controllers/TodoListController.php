@@ -6,6 +6,7 @@ class TodoListController extends \BaseController {
     {
         $this->beforeFilter('csrf', array('on' => 'post'));
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -42,10 +43,24 @@ class TodoListController extends \BaseController {
      */
     public function store()
     {
+        //define the rules
+        $rules = array(
+            'title' => array('required', 'unique:todo_lists,name')
+        );
+        //pass input to validators
+        $validator = Validator::make(Input::all(), $rules);
+        //test if input is valid
+
+        if ($validator->fails())
+        {
+            //$messages = $validator->messages();
+            return Redirect::route('todos.create')->withErrors($validator);
+        }
         $title = Input::get('title');
         $list = new TodoList();
         $list->name = $title;
         $list->save();
+
         return Redirect::route('todos.index');
     }
 
