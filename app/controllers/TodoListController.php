@@ -54,14 +54,14 @@ class TodoListController extends \BaseController {
         if ($validator->fails())
         {
             //$messages = $validator->messages();
-            return Redirect::route('todos.create')->withErrors($validator);
+            return Redirect::route('todos.create')->withErrors($validator)->withInput();
         }
         $title = Input::get('title');
         $list = new TodoList();
         $list->name = $title;
         $list->save();
 
-        return Redirect::route('todos.index');
+        return Redirect::route('todos.index')->withMessage('List was created Successfully');
     }
 
 
