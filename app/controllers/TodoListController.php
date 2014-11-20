@@ -61,11 +61,8 @@ class TodoListController extends \BaseController {
         $list->name = $title;
         $list->save();
 
-<<<<<<< HEAD
         return Redirect::route('todos.index')->withMessage('List was created Successfully');
-=======
         return Redirect::route('todos.index')->withMessage('List was Created');
->>>>>>> update-validation
     }
 
 
