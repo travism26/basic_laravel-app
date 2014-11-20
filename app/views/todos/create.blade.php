@@ -7,4 +7,5 @@
     {{ Form::submit('Submit', array('class' => 'button')) }}
     {{ $errors->first('title', '<small class="error">:message</small>') }}
     {{ Form::close() }}
+
 @stop
