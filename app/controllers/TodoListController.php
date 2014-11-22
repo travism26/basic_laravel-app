@@ -110,13 +110,13 @@ class TodoListController extends \BaseController {
         //test if input is valid
         if ($validator->fails())
         {
-            return Redirect::route('todos.edit')->withErrors($validator)->withInput();
+            return Redirect::route('todos.edit', $id)->withErrors($validator)->withInput();
         }
         $name = Input::get('name');
         $list = TodoList::findOrFail($id);
         $list->name = $name;
         $list->update();
-        return Redirect::route('todos.index')->withMessage('List was updated Successfully');
+        return Redirect::route('todos.index')->withMessage('List was updated');
     }
 
 
