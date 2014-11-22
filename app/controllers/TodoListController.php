@@ -4,7 +4,7 @@ class TodoListController extends \BaseController {
 
     public function __construct()
     {
-        $this->beforeFilter('csrf', array('on' => 'post'));
+        $this->beforeFilter('csrf', array('on' => array('post', 'put')));
     }
 
     /**
@@ -128,7 +128,9 @@ class TodoListController extends \BaseController {
      */
     public function destroy($id)
     {
-        //
+        
+        $todoList = TodoList::findOrFail($id)->delete();
+        return Redirect::route('todos.index')->withMessage('Item was Deleted!');
     }
 
 
