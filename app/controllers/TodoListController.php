@@ -62,7 +62,6 @@ class TodoListController extends \BaseController {
         $list->save();
 
         return Redirect::route('todos.index')->withMessage('List was created Successfully');
-        return Redirect::route('todos.index')->withMessage('List was Created');
     }
 
 
@@ -101,7 +100,23 @@ class TodoListController extends \BaseController {
      */
     public function update($id)
     {
-        //
+        //define the rules
+        $rules = array(
+            'name' => array('required', 'unique:todo_lists')
+        );
+        //pass input to validators
+        $validator = Validator::make(Input::all(), $rules);
+
+        //test if input is valid
+        if ($validator->fails())
+        {
+            return Redirect::route('todos.edit')->withErrors($validator)->withInput();
+        }
+        $name = Input::get('name');
+        $list = TodoList::findOrFail($id);
+        $list->name = $name;
+        $list->update();
+        return Redirect::route('todos.index')->withMessage('List was updated Successfully');
     }
 
 
