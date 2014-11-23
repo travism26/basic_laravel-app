@@ -4,6 +4,10 @@
 
 class TodoList extends Eloquent {
 
-    protected $fillable = [];
+    //protected $fillable = [];
+    public function listItems()
+    {
+        return $this->hasMany('TodoItem');
+    }
 
 }

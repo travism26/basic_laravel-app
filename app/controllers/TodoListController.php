@@ -73,9 +73,11 @@ class TodoListController extends \BaseController {
      */
     public function show($id)
     {
-        $list = TodoList::find($id);
-
-        return View::make('todos.show')->withList($list);
+        $list = TodoList::findOrFail($id);
+        $items = $list->listItems()->get();
+        return View::make('todos.show')
+            ->withList($list)
+            ->withItems($items);
     }
 
 
@@ -88,6 +90,7 @@ class TodoListController extends \BaseController {
     public function edit($id)
     {
         $list = TodoList::findOrFail($id);
+
         return View::make('todos.edit')->withList($list);
     }
 
@@ -116,6 +119,7 @@ class TodoListController extends \BaseController {
         $list = TodoList::findOrFail($id);
         $list->name = $name;
         $list->update();
+
         return Redirect::route('todos.index')->withMessage('List was updated');
     }
 
@@ -128,8 +132,9 @@ class TodoListController extends \BaseController {
      */
     public function destroy($id)
     {
-        
+
         $todoList = TodoList::findOrFail($id)->delete();
+
         return Redirect::route('todos.index')->withMessage('Item was Deleted!');
     }
 
