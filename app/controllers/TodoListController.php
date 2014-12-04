@@ -35,36 +35,6 @@ class TodoListController extends \BaseController {
         return View::make('todos.create');
     }
 
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @return Response
-     */
-    public function store()
-    {
-        //define the rules
-        $rules = array(
-            'name' => array('required', 'unique:todo_lists')
-        );
-        //pass input to validators
-        $validator = Validator::make(Input::all(), $rules);
-        //test if input is valid
-
-        if ($validator->fails())
-        {
-            //$messages = $validator->messages();
-            return Redirect::route('todos.create')->withErrors($validator)->withInput();
-        }
-        $title = Input::get('name');
-        $list = new TodoList();
-        $list->name = $title;
-        $list->save();
-
-        return Redirect::route('todos.index')->withMessage('List was created Successfully');
-    }
-
-
     /**
      * Display the specified resource.
      *
@@ -88,6 +58,7 @@ class TodoListController extends \BaseController {
     public function edit($id)
     {
         $list = TodoList::findOrFail($id);
+
         return View::make('todos.edit')->withList($list);
     }
 
@@ -116,9 +87,31 @@ class TodoListController extends \BaseController {
         $list = TodoList::findOrFail($id);
         $list->name = $name;
         $list->update();
+
         return Redirect::route('todos.index')->withMessage('List was updated');
     }
 
+    /**
+     * Store a newly created resource in storage.`
+     *
+     * @return Response
+     */
+    public function store()
+    {
+        $validator = $this->todovalidation();
+
+        if ($validator->fails())
+        {
+            //$messages = $validator->messages();
+            return Redirect::route('todos.create')->withErrors($validator)->withInput();
+        }
+        $title = Input::get('name');
+        $list = new TodoList();
+        $list->name = $title;
+        $list->save();
+
+        return Redirect::route('todos.index')->withMessage('List was created Successfully');
+    }
 
     /**
      * Remove the specified resource from storage.
@@ -128,9 +121,25 @@ class TodoListController extends \BaseController {
      */
     public function destroy($id)
     {
-        
+
         $todoList = TodoList::findOrFail($id)->delete();
+
         return Redirect::route('todos.index')->withMessage('Item was Deleted!');
+    }
+
+    /**
+     * @return \Illuminate\Validation\Validator
+     */
+    private function todovalidation()
+    {
+        //define the rules
+        $rules = array(
+            'name' => array('required', 'unique:todo_lists')
+        );
+        //pass input to validators
+        $validator = Validator::make(Input::all(), $rules);
+
+        return $validator;
     }
 
 
