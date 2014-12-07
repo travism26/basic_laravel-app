@@ -12,8 +12,8 @@
             <li class="has-dropdown not-click">
                 <a href="#">Menu Item</a>
                 <ul class="dropdown">
-                    <li><a>Sub Menu</a></li>
-                    <li><a>Sub Menu</a></li>
+                    <li>{{ link_to('/', 'Home', array('class' => 'button'), $secure = false) }}</li>
+                    <li>{{ link_to_route('todos.create', 'Create New List', null, array('class' => 'button')) }}</li>
                 </ul>
             </li>
             <li class="divider"></li>
