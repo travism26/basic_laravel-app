@@ -10,7 +10,7 @@
             </li>
             <li class="divider"></li>
             <li class="has-dropdown not-click">
-                <a href="#">Menu Item</a>
+                <a href="#">Navigation</a>
                 <ul class="dropdown">
                     <li>{{ link_to('/', 'Home', array('class' => 'button'), $secure = false) }}</li>
                     <li>{{ link_to_route('todos.create', 'Create New List', null, array('class' => 'button')) }}</li>
